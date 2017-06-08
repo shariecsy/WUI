@@ -1,0 +1,191 @@
+/* Write your styles */
+
+.swiper-container {
+	height: 180px;
+}
+
+
+/**
+          * Navbar Theme: app
+          */
+
+.am-navbar-app a {
+	color: #b8c1d2;
+}
+
+.am-navbar-app .am-active {
+	color: #000000;
+}
+
+.am-navbar-app .am-navbar-nav {
+	background-color: #ffffff;
+}
+
+.am-navbar-app .am-navbar-actions {
+	background-color: #0d86c4;
+}
+
+.am-navbar-app .am-navbar-actions a {
+	border-bottom: 1px solid #0b6fa2;
+}
+
+
+/**
+          * Header Theme: app
+          */
+
+.am-header-app {
+	background-color: #708bff;
+}
+
+.am-header-app .am-header-title {
+	color: #fff;
+}
+
+.am-header-app .am-header-title a {
+	color: #fff;
+}
+
+.am-header-app .am-header-icon {
+	font-size: 20px;
+}
+
+.am-header-app .am-header-nav {
+	color: #eeeeee;
+}
+
+.am-header-app .am-header-nav>a {
+	display: inline-block;
+	min-width: 36px;
+	text-align: center;
+	color: #eeeeee;
+}
+
+.am-header-app .am-header-nav>a+a {
+	margin-left: 5px;
+}
+
+.am-header-app .am-header-nav .am-btn {
+	margin-top: 9px;
+	height: 31px;
+	padding: 0 0.5em;
+	line-height: 30px;
+	font-size: 14px;
+	vertical-align: top;
+}
+
+.am-header-app .am-header-nav .am-btn .am-header-icon {
+	font-size: inherit;
+}
+
+.am-header-app .am-header-nav .am-btn-default {
+	color: #999999;
+}
+
+.am-header-app .am-header-nav-title,
+.am-header-app .am-header-nav-title+.am-header-icon {
+	font-size: 14px;
+}
+
+.am-header-nav-center {
+	padding-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+.main-body {
+	margin-bottom: 49px;
+	margin-top: 49px;
+}
+
+.icon-btn-nav-block {
+	padding: 5px;
+}
+
+.box {
+	height: 40px;
+	color: #eee;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	transition: all .2s ease;
+}
+
+.icon-btn {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.icon-btn-title {
+	font-size: 14px;
+	color: #000000;
+	line-height：14px;
+}
+
+.am-titlebar-title-font {
+	font-size: 14px;
+	color: #000000;
+	line-height：14px;
+}
+
+.icon-btn-title-left {
+	height: 30px font-size: 14px;
+	color: #000000;
+	line-height: 120%;
+	text-align: left;
+}
+
+.icon-btn-title-left-subtitle {
+	height: 20px font-size: 18px;
+	color: #ff9300;
+	line-height：120%;
+	text-align: left;
+}
+
+.tab-list-left {
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+.tab-list-content {
+	font-size: 16px;
+	color: #000000;
+}
+
+.tab-list-wrap {
+	margin: 5px;
+}
+
+.user-info-block{
+	margin-top: -1px;
+	background-color: #708bff!important; 
+}
+
+.user-info-block{
+	margin-top: -1px;
+	background-color: #708bff!important; 
+}
+
+.icon-list {
+	padding: 5px;
+}
+
+.icon-list li{
+	line-height: 48px;
+}
+
+.icon-list-left {
+  padding-left: 10px;
+}
+
+.icon-list-content {
+  padding-left: 15px;
+}
+
+.icon-list-right {
+  position: absolute;
+  right: 10px;
+}
