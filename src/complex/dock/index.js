@@ -18,7 +18,7 @@ var Dock = React.createClass({
 Dock.Item = React.createClass({
 	render:function(){
 		return (
-			<li>
+			<li onClick={this.props.clickHandler}>
 				{this.props.children}
 			</li>
 		)

@@ -33,8 +33,6 @@
 
     <link rel="stylesheet" href="../libs/assets/css/amazeui.min.css">
     <link rel="stylesheet" href="../libs/assets/css/app.css">
-    <link rel="stylesheet" href="../libs/swiper/swiper.min.css">
-    <script type="text/javascript" src="../libs/swiper/swiper.min.js"></script>
     <script type="text/javascript" src="../libs/react.js"></script>
     <script type="text/javascript" src="../libs/react-dom.js"></script>
     <style>
@@ -92,22 +90,20 @@
         .bind-card-content p:last-child{
             padding-bottom: 0;
         }
-        .bind-card-content .notice{
-            font-size:90%;
-            color:#999;
-        }
         body{
-            background:#f2f2f2;
+            background:#edf3ff;
         }
-        .bind-card-notice{
+        .app-notice{
             padding: 0 20px;
-            font-size:90%;;
+            font-size:80%;;
             color:#999;
         }
-        .bind-card-notice i{
-            color: #ffa500;
+        .app-notice i{
             font-size:2rem;
             margin-right:10px;
+        }
+        .app-notice i.am-icon-info-circle{
+            color: #ffa500;
         }
         .btn{
             color: #fff;
@@ -127,9 +123,14 @@
         .btn-confirm{
             background: #708bff;
         }
-        a.btn:visited{
+        a.btn:visited,a.btn:active{
             background: #708bff;
             color:#fff;
+        }
+        .btn-box{
+            margin-top: 20px;
+            text-align: center;
+            padding: 0 20px;
         }
     </style>
 </head>

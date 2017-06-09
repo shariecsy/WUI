@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -151,6 +151,149 @@ module.exports = Header;
 "use strict";
 
 
+var Dock = __webpack_require__(4);
+var Footer = React.createClass({
+	displayName: 'Footer',
+
+	getInitialState: function getInitialState() {
+		return {
+			selectIndex: this.props.selectIndex
+		};
+	},
+	_handleClick: function _handleClick(key, url) {
+		if (key == this.props.selectIndex) {
+			return;
+		} else {
+			window.location = url;
+		}
+	},
+	render: function render() {
+		return React.createElement(
+			Dock,
+			null,
+			React.createElement(
+				Dock.Item,
+				{ clickHandler: this._handleClick.bind(this, '0', "../index/index.html") },
+				React.createElement(
+					'a',
+					{ href: 'javascript:void(0)', className: this.state.selectIndex == 0 ? "am-active" : "" },
+					React.createElement('span', { className: 'am-icon-home' }),
+					React.createElement(
+						'span',
+						{ className: 'am-navbar-label' },
+						'\u9996\u9875'
+					)
+				)
+			),
+			React.createElement(
+				Dock.Item,
+				{ clickHandler: this._handleClick.bind(this, '1', "../msg/index.html") },
+				React.createElement(
+					'a',
+					{ href: 'javascript:void(0)', className: this.state.selectIndex == 1 ? "am-active" : "" },
+					React.createElement('span', { className: 'am-icon-comments' }),
+					React.createElement(
+						'span',
+						{ className: 'am-navbar-label' },
+						'\u6D88\u606F'
+					)
+				)
+			),
+			React.createElement(
+				Dock.Item,
+				{ clickHandler: this._handleClick.bind(this, '2', "../user/index.html") },
+				React.createElement(
+					'a',
+					{ href: 'javascript:void(0)', className: this.state.selectIndex == 2 ? "am-active" : "" },
+					React.createElement('span', { className: 'am-icon-user' }),
+					React.createElement(
+						'span',
+						{ className: 'am-navbar-label' },
+						'\u6211\u7684'
+					)
+				)
+			)
+		);
+	}
+});
+
+module.exports = Footer;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var MsgList = React.createClass({
+	displayName: "MsgList",
+
+	getInitialState: function getInitialState() {
+		return {
+			listData: []
+		};
+	},
+	setListData: function setListData(data) {
+		this.setState({
+			listData: data
+		});
+	},
+	render: function render() {
+		return React.createElement(
+			"div",
+			{ className: "tab-list-wrap" },
+			React.createElement(
+				"div",
+				{ className: "am-list-news-bd" },
+				React.createElement(
+					"ul",
+					{ className: "am-list" },
+					this.state.listData.map(function (obj, index) {
+						return React.createElement(
+							"li",
+							{ className: "am-g am-list-item-desced", key: index },
+							React.createElement(
+								"div",
+								{ className: "am-cf" },
+								React.createElement(
+									"span",
+									{ className: "tab-list-left am-fl" },
+									obj.title
+								),
+								React.createElement(
+									"span",
+									{ className: "am-list-item-text am-fr" },
+									obj.btime
+								)
+							),
+							React.createElement(
+								"div",
+								{ className: "tab-list-content" },
+								obj.content
+							),
+							React.createElement(
+								"div",
+								{ className: "am-list-item-text" },
+								obj.subtitle
+							)
+						);
+					})
+				)
+			)
+		);
+	}
+});
+
+module.exports = MsgList;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var Dock = React.createClass({
 	displayName: "Dock",
 
@@ -178,7 +321,7 @@ Dock.Item = React.createClass({
 	render: function render() {
 		return React.createElement(
 			"li",
-			null,
+			{ onClick: this.props.clickHandler },
 			this.props.children
 		);
 	}
@@ -187,7 +330,7 @@ Dock.Item = React.createClass({
 module.exports = Dock;
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -266,81 +409,14 @@ ButtonGroup.Thumbnail = React.createClass({
 module.exports = ButtonGroup;
 
 /***/ }),
-/* 4 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var MsgList = React.createClass({
-	displayName: "MsgList",
-
-	getInitialState: function getInitialState() {
-		return {
-			listData: []
-		};
-	},
-	setListData: function setListData(data) {
-		this.setState({
-			listData: data
-		});
-	},
-	render: function render() {
-		return React.createElement(
-			"div",
-			{ className: "tab-list-wrap" },
-			React.createElement(
-				"div",
-				{ className: "am-list-news-bd" },
-				React.createElement(
-					"ul",
-					{ className: "am-list" },
-					this.state.listData.map(function (obj, index) {
-						return React.createElement(
-							"li",
-							{ className: "am-g am-list-item-desced", key: index },
-							React.createElement(
-								"div",
-								{ className: "am-cf" },
-								React.createElement(
-									"span",
-									{ className: "tab-list-left am-fl" },
-									obj.title
-								),
-								React.createElement(
-									"span",
-									{ className: "am-list-item-text am-fr" },
-									obj.btime
-								)
-							),
-							React.createElement(
-								"div",
-								{ className: "tab-list-content" },
-								obj.content
-							),
-							React.createElement(
-								"div",
-								{ className: "am-list-item-text" },
-								obj.subtitle
-							)
-						);
-					})
-				)
-			)
-		);
-	}
-});
-
-module.exports = MsgList;
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var ButtonGroup = __webpack_require__(3);
+var ButtonGroup = __webpack_require__(5);
 var ProductList = React.createClass({
 	displayName: 'ProductList',
 
@@ -404,8 +480,7 @@ ProductList.Button = React.createClass({
 module.exports = ProductList;
 
 /***/ }),
-/* 6 */,
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -473,13 +548,13 @@ Slider.Item = React.createClass({
 module.exports = Slider;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var MsgList = __webpack_require__(4);
+var MsgList = __webpack_require__(3);
 var TabBar = React.createClass({
 	displayName: 'TabBar',
 
@@ -560,9 +635,9 @@ var TabBar = React.createClass({
 module.exports = TabBar;
 
 /***/ }),
-/* 9 */,
 /* 10 */,
-/* 11 */
+/* 11 */,
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -572,12 +647,12 @@ module.exports = TabBar;
  * Created by william on 2017/6/4.
  */
 var Header = __webpack_require__(1);
-var Dock = __webpack_require__(2);
+var Footer = __webpack_require__(2);
 var Container = __webpack_require__(0);
-var Slider = __webpack_require__(7);
-var ButtonGroup = __webpack_require__(3);
-var ProductList = __webpack_require__(5);
-var TabBar = __webpack_require__(8);
+var Slider = __webpack_require__(8);
+var ButtonGroup = __webpack_require__(5);
+var ProductList = __webpack_require__(7);
+var TabBar = __webpack_require__(9);
 
 var Root = React.createClass({
 	displayName: 'Root',
@@ -655,52 +730,7 @@ var Root = React.createClass({
 				),
 				React.createElement(TabBar, null)
 			),
-			React.createElement(
-				Dock,
-				null,
-				React.createElement(
-					Dock.Item,
-					null,
-					React.createElement(
-						'a',
-						{ href: 'javascript:void(0)', className: 'am-active' },
-						React.createElement('span', { className: 'am-icon-home' }),
-						React.createElement(
-							'span',
-							{ className: 'am-navbar-label' },
-							'\u9996\u9875'
-						)
-					)
-				),
-				React.createElement(
-					Dock.Item,
-					null,
-					React.createElement(
-						'a',
-						{ href: '../msg/index.html', className: '' },
-						React.createElement('span', { className: 'am-icon-comments' }),
-						React.createElement(
-							'span',
-							{ className: 'am-navbar-label' },
-							'\u6D88\u606F'
-						)
-					)
-				),
-				React.createElement(
-					Dock.Item,
-					null,
-					React.createElement(
-						'a',
-						{ href: '../user/index.html', className: '' },
-						React.createElement('span', { className: 'am-icon-user' }),
-						React.createElement(
-							'span',
-							{ className: 'am-navbar-label' },
-							'\u6211\u7684'
-						)
-					)
-				)
-			)
+			React.createElement(Footer, { selectIndex: '0' })
 		);
 	}
 });

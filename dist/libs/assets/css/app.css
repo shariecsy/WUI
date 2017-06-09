@@ -160,13 +160,29 @@
 }
 
 .user-info-block{
-	margin-top: -1px;
-	background-color: #708bff!important; 
+	min-height: 120px;
+	background-color: #708bff; 
+	margin-bottom: 10px;
 }
 
-.user-info-block{
-	margin-top: -1px;
-	background-color: #708bff!important; 
+.user-info-block-left{
+	position: absolute;
+	top:40px;
+	left: 10px;
+}
+.user-info-block-center{
+	display: block;
+	padding-left: 90px;
+	padding-top: 50px; 
+	font-size: 14px;
+	color: white;
+}
+.user-info-block-right{
+	position: absolute;
+	top:50px;
+  	right: 15px; 
+  	font-size: 30px;
+  	color: silver;
 }
 
 .icon-list {
@@ -188,4 +204,6 @@
 .icon-list-right {
   position: absolute;
   right: 10px;
+  font-size: 30px;
+  color: silver;
 }

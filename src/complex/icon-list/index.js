@@ -11,7 +11,7 @@ var IconList = React.createClass({
 			  		{
 			  			this.props.listData.map(function(obj,index){
 			  				var leftCls = "icon-list-left "+obj.leftCls;
-			  				var rightCls = "icon-list-right am-icon-chevron-right";
+			  				var rightCls = "icon-list-right am-icon-angle-right";
 			  				return (
 			  					  <li className="am-g" key={index} onClick={obj.clickHandler}>
 							          <span className={leftCls}></span>

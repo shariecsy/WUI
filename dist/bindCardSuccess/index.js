@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -148,7 +148,7 @@ module.exports = Header;
 
 /***/ }),
 
-/***/ 10:
+/***/ 11:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -280,17 +280,17 @@ var Root = React.createClass({
 			),
 			React.createElement(
 				'div',
-				{ className: 'bind-card-notice' },
+				{ className: 'app-notice' },
 				React.createElement('i', { className: 'am-icon-info-circle' }),
-				'\u6CE8\u610F\uFF1A\u6BCF\u4E2A\u8D26\u53F7\u540C\u4E2A\u533B\u9662\u6700\u591A\u53EF\u4EE5\u7ED1\u5B9A3\u5F20\u5C31\u8BCA\u5361\u3002',
+				'\u6CE8\u610F\uFF1A\u6BCF\u4E2A\u8D26\u53F7\u540C\u4E2A\u533B\u9662\u6700\u591A\u53EF\u4EE5\u7ED1\u5B9A3\u5F20\u5C31\u8BCA\u5361\u3002'
+			),
+			React.createElement(
+				'div',
+				{ className: 'btn-box' },
 				React.createElement(
-					'div',
-					null,
-					React.createElement(
-						'a',
-						{ href: '###', className: 'btn btn-confirm' },
-						'\u77E5\u9053\u4E86'
-					)
+					'a',
+					{ href: '###', className: 'btn btn-confirm' },
+					'\u77E5\u9053\u4E86'
 				)
 			)
 		);

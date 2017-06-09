@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -151,44 +151,76 @@ module.exports = Header;
 "use strict";
 
 
-var Dock = React.createClass({
-	displayName: "Dock",
+var Dock = __webpack_require__(4);
+var Footer = React.createClass({
+	displayName: 'Footer',
 
-	_handleClick: function _handleClick(action) {
-		console.log(action);
+	getInitialState: function getInitialState() {
+		return {
+			selectIndex: this.props.selectIndex
+		};
+	},
+	_handleClick: function _handleClick(key, url) {
+		if (key == this.props.selectIndex) {
+			return;
+		} else {
+			window.location = url;
+		}
 	},
 	render: function render() {
-		var length = this.props.children.length;
-		var avgCls = 'am-navbar-nav am-cf am-avg-sm-' + length;
 		return React.createElement(
-			"div",
-			{ "data-am-widget": "navbar", className: "am-navbar am-cf am-navbar-app " },
+			Dock,
+			null,
 			React.createElement(
-				"ul",
-				{ className: avgCls },
-				this.props.children
+				Dock.Item,
+				{ clickHandler: this._handleClick.bind(this, '0', "../index/index.html") },
+				React.createElement(
+					'a',
+					{ href: 'javascript:void(0)', className: this.state.selectIndex == 0 ? "am-active" : "" },
+					React.createElement('span', { className: 'am-icon-home' }),
+					React.createElement(
+						'span',
+						{ className: 'am-navbar-label' },
+						'\u9996\u9875'
+					)
+				)
+			),
+			React.createElement(
+				Dock.Item,
+				{ clickHandler: this._handleClick.bind(this, '1', "../msg/index.html") },
+				React.createElement(
+					'a',
+					{ href: 'javascript:void(0)', className: this.state.selectIndex == 1 ? "am-active" : "" },
+					React.createElement('span', { className: 'am-icon-comments' }),
+					React.createElement(
+						'span',
+						{ className: 'am-navbar-label' },
+						'\u6D88\u606F'
+					)
+				)
+			),
+			React.createElement(
+				Dock.Item,
+				{ clickHandler: this._handleClick.bind(this, '2', "../user/index.html") },
+				React.createElement(
+					'a',
+					{ href: 'javascript:void(0)', className: this.state.selectIndex == 2 ? "am-active" : "" },
+					React.createElement('span', { className: 'am-icon-user' }),
+					React.createElement(
+						'span',
+						{ className: 'am-navbar-label' },
+						'\u6211\u7684'
+					)
+				)
 			)
 		);
 	}
 });
 
-Dock.Item = React.createClass({
-	displayName: "Item",
-
-	render: function render() {
-		return React.createElement(
-			"li",
-			null,
-			this.props.children
-		);
-	}
-});
-
-module.exports = Dock;
+module.exports = Footer;
 
 /***/ }),
-/* 3 */,
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -256,6 +288,48 @@ var MsgList = React.createClass({
 module.exports = MsgList;
 
 /***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Dock = React.createClass({
+	displayName: "Dock",
+
+	_handleClick: function _handleClick(action) {
+		console.log(action);
+	},
+	render: function render() {
+		var length = this.props.children.length;
+		var avgCls = 'am-navbar-nav am-cf am-avg-sm-' + length;
+		return React.createElement(
+			"div",
+			{ "data-am-widget": "navbar", className: "am-navbar am-cf am-navbar-app " },
+			React.createElement(
+				"ul",
+				{ className: avgCls },
+				this.props.children
+			)
+		);
+	}
+});
+
+Dock.Item = React.createClass({
+	displayName: "Item",
+
+	render: function render() {
+		return React.createElement(
+			"li",
+			{ onClick: this.props.clickHandler },
+			this.props.children
+		);
+	}
+});
+
+module.exports = Dock;
+
+/***/ }),
 /* 5 */,
 /* 6 */,
 /* 7 */,
@@ -263,7 +337,8 @@ module.exports = MsgList;
 /* 9 */,
 /* 10 */,
 /* 11 */,
-/* 12 */
+/* 12 */,
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -273,9 +348,9 @@ module.exports = MsgList;
  * Created by william on 2017/6/4.
  */
 var Header = __webpack_require__(1);
-var Dock = __webpack_require__(2);
+var Footer = __webpack_require__(2);
 var Container = __webpack_require__(0);
-var MsgList = __webpack_require__(4);
+var MsgList = __webpack_require__(3);
 
 var Root = React.createClass({
 	displayName: 'Root',
@@ -318,52 +393,7 @@ var Root = React.createClass({
 				null,
 				React.createElement(MsgList, { ref: 'msglist' })
 			),
-			React.createElement(
-				Dock,
-				null,
-				React.createElement(
-					Dock.Item,
-					null,
-					React.createElement(
-						'a',
-						{ href: '../index/index.html', className: '' },
-						React.createElement('span', { className: 'am-icon-home' }),
-						React.createElement(
-							'span',
-							{ className: 'am-navbar-label' },
-							'\u9996\u9875'
-						)
-					)
-				),
-				React.createElement(
-					Dock.Item,
-					null,
-					React.createElement(
-						'a',
-						{ href: 'javascript:void(0)', className: 'am-active' },
-						React.createElement('span', { className: 'am-icon-comments' }),
-						React.createElement(
-							'span',
-							{ className: 'am-navbar-label' },
-							'\u6D88\u606F'
-						)
-					)
-				),
-				React.createElement(
-					Dock.Item,
-					null,
-					React.createElement(
-						'a',
-						{ href: '../user/index.html', className: '' },
-						React.createElement('span', { className: 'am-icon-user' }),
-						React.createElement(
-							'span',
-							{ className: 'am-navbar-label' },
-							'\u6211\u7684'
-						)
-					)
-				)
-			)
+			React.createElement(Footer, { selectIndex: '1' })
 		);
 	}
 });

@@ -2,7 +2,7 @@
  * Created by william on 2017/6/4.
  */
 var Header = require('../../src/complex/header');
-var Dock = require('../../src/complex/dock');
+var Footer = require('../../src/complex/footer');
 var Container = require('../../src/complex/container');
 var MsgList = require('../../src/complex/msg-list');
 var UserInfo = require('../../src/complex/user-info');
@@ -95,26 +95,7 @@ var Root = React.createClass({
 			   		<IconList listData={this.props.iconList2}/>
 			   		<IconList listData={this.props.iconList3}/>
 				</Container>
-				<Dock>
-					<Dock.Item>
-						<a href="../index/index.html" className="">
-                            <span className="am-icon-home"></span>
-                            <span className="am-navbar-label">首页</span>
-                        </a>
-					</Dock.Item>
-					<Dock.Item>
-						<a href="../msg/index.html" className="">
-                            <span className="am-icon-comments"></span>
-                            <span className="am-navbar-label">消息</span>
-                        </a>
-					</Dock.Item>
-					<Dock.Item>
-						<a href="javascript:void(0)" className="am-active">
-                            <span className="am-icon-user"></span>
-                            <span className="am-navbar-label">我的</span>
-                        </a>
-					</Dock.Item>
-				</Dock>
+				<Footer selectIndex="2"/>
             </div>
 		)
 	}

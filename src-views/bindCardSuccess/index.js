@@ -32,11 +32,11 @@ var Root = React.createClass({
 					
 				   </div>
 				</Container>
-				<div className="bind-card-notice">
+				<div className="app-notice">
 					<i className="am-icon-info-circle"></i>注意：每个账号同个医院最多可以绑定3张就诊卡。
-					<div>
-						<a href="###" className="btn btn-confirm">知道了</a>
-					</div>
+				</div>
+				<div className="btn-box">
+					<a href="###" className="btn btn-confirm">知道了</a>
 				</div>
             </div>
 		)
